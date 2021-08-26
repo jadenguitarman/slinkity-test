@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styles from "./loading.module.css";
 
 class Loading extends Component {
 	constructor(props) {
@@ -14,8 +13,9 @@ class Loading extends Component {
 	}
 
 	componentDidMount = () => {
+		console.log('loading')
 		const rect = document
-			.querySelector(`.${styles.loading}`)
+			.querySelector(`.loading`)
 			.getBoundingClientRect();
 		this.setState({
 			center_x: rect.left + window.scrollX + 50,
@@ -57,7 +57,7 @@ class Loading extends Component {
 
 	render = () => (
 		<div
-			className={styles.loading}
+			className="loading"
 			onMouseDown={this.mouseDown}
 			style={{transform: `rotate(${this.state.degrees}deg)`}}
 		>
